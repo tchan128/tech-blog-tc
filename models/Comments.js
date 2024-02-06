@@ -15,6 +15,10 @@ Comments.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        date_created: {
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -22,10 +26,13 @@ Comments.init(
                 key: 'id'
             }
         },
-        date_created: {
-            type: DatTypes.DATE,
-            defaultValue: DataTypes.NOW,
-        },
+        blog_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'blog',
+                key: 'id'
+            }
+        }
     }, 
     {
         sequelize,
