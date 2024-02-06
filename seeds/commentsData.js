@@ -9,6 +9,6 @@ const commentData = [
     }
 ];
 
-const seedComments = () => Gallery.bulkCreate(commentData);
+const seedComments = () => Comments.bulkCreate(commentData);
 
 module.exports = seedComments;
