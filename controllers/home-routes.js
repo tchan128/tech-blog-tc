@@ -4,20 +4,22 @@ const { User, Blog, Comments } = require('../models');
 // GET all events for homepage
 router.get('/', async (req, res) => {
     try {
-        const eventsData = await Blog.findAll({
+        const blogData = await Blog.findAll({
             include: [
                 {
                     model: User,
-                    attributes: ['name']
+                    attributes: ['id']
                 },
             ],
         });
 
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-        res.render('homepage', {
-            blogs
-        });
+        // res.json(blogs)
+        res.render('homepage')
+        // res.render('homepage', {
+        //     blogs
+        // });
     } catch (err) {
         console.log(err);
         res.status(500).json(err)
