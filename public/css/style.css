@@ -1,5 +1,4 @@
 * {
-    color: black;
     font-family: 'Roboto', sans-serif;
     margin: 0;
 }
@@ -18,7 +17,7 @@ nav a {
 
 .title {
     color: black;
-    background-color: rgb(194, 223, 208);
+    background-color: rgb(209, 228, 218);
     padding: 10px 30px;
     margin: 30px 0px 0px 30px;
     border-radius: 10px;
@@ -27,3 +26,53 @@ nav a {
     box-shadow: 7px 8px 0px 0px grey;
 }
 
+body {
+    background-color: rgb(209, 228, 218);
+}
+
+.login {
+    text-align: center;
+    margin: 5vh 5vw;
+    border: #24180f solid 3px;
+}
+
+.login-title {
+    background-color: #24180f;
+    color: white;
+    padding: 10px 0px 13px 20px;
+    text-align: left;
+    margin: 0px 0px 20px 0px;
+}
+
+.login-form {
+    margin: 0px 0px 20px 0px;
+    padding: 10px 0px 13px 20px;
+}
+
+.form-group {
+    margin: 0px 0px 20px 0px;
+}
+
+input {
+    width: 84vw;
+    height: 3vh;
+    margin: 5px 0px;
+}
+
+input {
+    display: block;
+}
+
+label {
+    font-size: 20px;
+    font-weight: light;
+}
+
+.username, .password {
+    text-align: left;
+}
+
+.submit {
+    width: 83vw;
+    height: 3vh;
+}
