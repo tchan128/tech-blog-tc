@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['id']
+                    attributes: ['name']
                 },
             ],
         });
@@ -16,10 +16,9 @@ router.get('/', async (req, res) => {
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
         // res.json(blogs)
-        res.render('homepage')
-        // res.render('homepage', {
-        //     blogs
-        // });
+        res.render('homepage', {
+            blogs
+        })
     } catch (err) {
         console.log(err);
         res.status(500).json(err)
