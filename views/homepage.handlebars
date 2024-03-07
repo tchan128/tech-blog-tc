@@ -2,7 +2,7 @@
 <div class="blog-container">
     <div class="blog-title">
         <h1>{{blog.title}}</h1>
-        <h4>{{blog.user.name}} on {{blog.date_created}}</h4>
+        <h4>Posted by {{blog.user.name}} on {{format_date blog.date_created}}</h4>
     </div>
     <div>
         <p>{{blog.content}}</p>
