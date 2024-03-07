@@ -3,6 +3,8 @@
     margin: 0;
 }
 
+/* Navigation bar and body */
+
 nav {
     background-color: #24180f;
     padding: 35px;
@@ -30,10 +32,12 @@ body {
     background-color: #D9EAD3;
 }
 
-.login {
+/* Login */
+
+.login-container {
     text-align: center;
-    margin: 5vh 5vw;
-    border: #24180f solid 3px;
+    margin: 20px 40px;
+    border: #24180f solid;
 }
 
 .login-title {
@@ -46,25 +50,25 @@ body {
 
 .login-form {
     margin: 0px 0px 20px 0px;
-    padding: 10px 0px 13px 20px;
+    padding: 10px 20px 13px 20px;
 }
 
 .form-group {
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 35px 0px;
 }
 
 input {
-    width: 84vw;
+    width: 100%;
     height: 3vh;
     margin: 5px 0px;
-}
-
-input {
+    padding: 5px 10px;
+    border: none;
+    font-size: 20px;
     display: block;
 }
 
 label {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: light;
 }
 
@@ -73,9 +77,15 @@ label {
 }
 
 .submit {
-    width: 83vw;
-    height: 3vh;
+    width: 100%;
+    height: 5vh;
+    font-size: 25px;
+    border-radius: 5px;
+    background-color: rgb(91, 86, 86);
+    color: white;
 }
+
+/* Homepage */
 
 .blog-container {
     margin: 20px 40px;
