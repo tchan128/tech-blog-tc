@@ -25,6 +25,15 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/dashboard', (req, res) => {
+    // if (req.session.logged_in) {
+    //     res.redirect('/dashboard');
+    //     return;
+    // }
+    res.render('dashboard');
+});
+
+
 
 router.get('/login', (req, res) => {
     // if (req.session.logged_in) {

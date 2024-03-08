@@ -80,7 +80,7 @@ label {
     width: 100%;
     height: 5vh;
     font-size: 25px;
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: rgb(91, 86, 86);
     color: white;
 }
@@ -122,4 +122,23 @@ label {
 
 .sign-up {
     text-decoration: none;
+}
+
+/* Dashboard */
+
+.create-post {
+    background-color: #24180f;
+    width: fit-content;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 15px;
+    padding: 5px 25px;
+    color: white;
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 70vh; /* Adjust this as needed */
 }
