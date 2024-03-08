@@ -2,6 +2,7 @@ const loginFormHandler = async (event) => {
     event.preventDefault();
 
     const name = document.querySelector('#username-login').value.trim();
+    console.log(name)
     const password = document.querySelector('#password-login').value.trim();
 
     if (name && password) {
@@ -12,7 +13,8 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/dashboard');
+            console.log("You're good")
         } else {
             alert(response.statusText);
         }
@@ -33,17 +35,19 @@ const signupFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/dashboard');
         } else {
             alert(response.statusText);
         }
     }
 };
 
-document
-  .querySelector('.login-container')
-  .addEventListener('submit', loginFormHandler);
-
-document
-  .querySelector('.signup-container')
-  .addEventListener('submit', signupFormHandler);
+if (document.querySelector('.login-container')) {
+    document
+        .querySelector('.login-container')
+        .addEventListener('submit', loginFormHandler);
+} else if (document.querySelector('.signup-container')) {
+    document
+        .querySelector('.signup-container')
+        .addEventListener('submit', signupFormHandler);
+}

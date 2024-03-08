@@ -43,7 +43,7 @@ router.get('/blog/:id', async (req, res) => {
 
         res.render('blog', {
             ...blog,
-            // logged_in: req.session.logged_in
+            logged_in: req.session.logged_in
         })
 
         // res.json(blog)
@@ -55,28 +55,27 @@ router.get('/blog/:id', async (req, res) => {
 })
 
 router.get('/dashboard', (req, res) => {
-    // if (req.session.logged_in) {
-    //     res.redirect('/dashboard');
-    //     return;
-    // }
-    res.render('login');
+    if (req.session.logged_in) {
+        res.redirect('/dashboard');
+        return;
+    } else {
+        res.render('login');
+    }
 });
 
-
-
 router.get('/login', (req, res) => {
-    // if (req.session.logged_in) {
-    //     res.redirect('/dashboard');
-    //     return;
-    // }
+    if (req.session.logged_in) {
+        res.redirect('/dashboard');
+        return;
+    }
     res.render('login');
 });
 
 router.get('/signup', (req, res) => {
-    // if (req.session.logged_in) {
-    //     res.redirect('/dashboard');
-    //     return;
-    // }
+    if (req.session.logged_in) {
+        res.redirect('/dashboard');
+        return;
+    }
     res.render('signup');
 });
 
