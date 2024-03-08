@@ -33,7 +33,7 @@ router.get('/blog/:id', async (req, res) => {
                     attribute: ['name'],
                 },
                 {
-                    model: Comment,
+                    model: Comments,
                     attribute: ['comment', 'date_created', 'user_id']
                 }
             ]
@@ -45,8 +45,12 @@ router.get('/blog/:id', async (req, res) => {
             ...blog,
             // logged_in: req.session.logged_in
         })
+
+        // res.json(blog)
+
     } catch (err) {
         res.status(500).json(err)
+        console.log(err)
     }
 })
 
