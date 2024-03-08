@@ -58,7 +58,7 @@ body {
 
 input {
     width: 100%;
-    height: 5vh;
+    height: 50px;
     margin: 5px 0px;
     padding: 0px;
     border: none;
@@ -141,4 +141,37 @@ label {
     justify-content: center;
     align-items: flex-end;
     height: 70vh; /* Adjust this as needed */
+}
+
+/* Individual blog page */
+
+.add-comment-container {
+    margin: 20px 40px;
+    border: #24180f solid;
+}
+
+.comment-header {
+    background-color: #24180f;
+    height: 50px
+}
+
+.scrollable-input {
+    height: 110px;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: 100%;
+    margin: 5px 0px;
+    padding: 8px;
+    border: none;
+    font-size: 20px;
+    display: block;
+    box-sizing: border-box;
+}
+
+.blog-post {
+    text-decoration: none;
+    background-color: #24180f;
+    color: #D9EAD3;
+    font-size: 25px;
+    font-weight: bold;
 }
