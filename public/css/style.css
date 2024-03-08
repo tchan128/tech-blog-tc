@@ -32,9 +32,9 @@ body {
     background-color: #D9EAD3;
 }
 
-/* Login */
+/* Login and sign up*/
 
-.login-container {
+.login-container, .signup-container {
     /* text-align: center; */
     margin: 20px 40px;
     border: #24180f solid;
@@ -118,4 +118,8 @@ label {
     padding: 25px;
     font-size: 20px;
     line-height: 1.5;
+}
+
+.sign-up {
+    text-decoration: none;
 }
