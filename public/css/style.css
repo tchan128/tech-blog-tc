@@ -34,7 +34,7 @@ body {
 
 /* Login and sign up*/
 
-.login-container, .signup-container {
+.login-container, .signup-container , .post-form {
     /* text-align: center; */
     margin: 20px 40px;
     border: #24180f solid;
