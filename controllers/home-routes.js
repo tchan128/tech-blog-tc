@@ -56,10 +56,10 @@ router.get('/blog/:id', async (req, res) => {
 
 router.get('/dashboard', (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/dashboard');
+        res.render('dashboard');
         return;
     } else {
-        res.render('login');
+        res.redirect('login');
     }
 });
 

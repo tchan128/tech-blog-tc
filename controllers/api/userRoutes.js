@@ -2,6 +2,17 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
+router.get('/', async (req, res) => {
+    try {
+        const userData = await User.findAll();
+
+        res.json(userData)
+    } catch (err) {
+        res.status(400).json(err)
+    }
+});
+
+
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create(req.body);
@@ -32,7 +43,8 @@ router.post('/login', async (req, res) => {
 
         const validPassword = await userData.checkPassword(req.body.password);
 
-        console.log(validPassword)
+        console.log(validPassword) // returns false
+        console.log(req.body.password == userData.password) // returns true
         console.log(req.body.password)
         console.log(userData.password)
 
