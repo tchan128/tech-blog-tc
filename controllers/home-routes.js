@@ -55,14 +55,27 @@ router.get('/blog/:id', async (req, res) => {
     }
 })
 
-router.get('/dashboard', (req, res) => {
-    if (req.session.logged_in) {
-        res.render('dashboard', {
-            logged_in: req.session.logged_in
-        });
-        return;
-    } else {
-        res.redirect('login');
+router.get('/dashboard', async (req, res) => {
+    try { 
+        if (req.session.logged_in) {
+
+            const userData = await User.findByPk(req.session.user_id, {
+                attributes: { exclude: ['password'] },
+                include: [{ model: Blog }] 
+            });
+    
+            const user = userData.get({ plain: true });
+
+            res.render('dashboard', {
+                ...user,
+                logged_in: req.session.logged_in,
+            });
+            return;
+        } else {
+            res.redirect('login');
+        }
+    } catch (err) {
+        res.status(400).json(err)
     }
 });
 
