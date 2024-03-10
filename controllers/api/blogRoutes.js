@@ -25,4 +25,21 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.put('/:blogId', async (req, res) => {
+    try {
+        const blogData = await Blog.update(req.body, {
+            where: {
+                id: req.params.blogId
+            }
+        });
+        if (!blogData[0]) {
+            res.status(400).json({ message: 'No user with this id!' });
+            return;
+        }
+        res.status(200).json(blogData)
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 module.exports = router;

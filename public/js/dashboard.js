@@ -67,3 +67,11 @@ if (document.querySelector('.post-submit')) {
 if (document.querySelector('.create-post')) {
     document.querySelector('.create-post').addEventListener('click', newPostButton)
 }
+
+// if (document.querySelector('.post-update')) {
+//     document.querySelector('.post-update').addEventListener('click', newPostButton)
+// }
+
+if (document.querySelector('.post-delete')) {
+    document.querySelector('.post-delete').addEventListener('click', delButtonHandler)
+}
