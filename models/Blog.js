@@ -29,7 +29,14 @@ Blog.init(
                 model: 'user',
                 key: 'id'
             }
-        }
+        }, 
+        // comments: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'comments',
+        //         key: 'id'
+        //     }
+        // }
     },
     {
         sequelize,

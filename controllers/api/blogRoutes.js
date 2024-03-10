@@ -42,7 +42,10 @@ router.get('/:blogId', async (req, res) => {
 
         const blog = blogData.get({ plain: true });
 
-        res.json(blog)
+        res.render('edit-blog', {
+            blog,
+            logged_in: req.session.logged_in 
+        })
     } catch (err) {
         res.status(500).json(err);
     }

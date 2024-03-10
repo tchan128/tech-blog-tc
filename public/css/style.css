@@ -34,7 +34,7 @@ body {
 
 /* Login and sign up*/
 
-.login-container, .signup-container , .post-form {
+.login-container, .signup-container , .post-form, .edit-form {
     /* text-align: center; */
     margin: 20px 40px;
     border: #24180f solid;
@@ -198,4 +198,9 @@ label {
     text-align: bottom;
     float: right;
     margin-top: 3px;
+}
+
+.comment-container {
+    margin: 20px 40px;
+    border: #24180f solid;
 }
