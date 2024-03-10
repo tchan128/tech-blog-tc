@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Blog, User, Comments } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
@@ -25,6 +25,29 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/:blogId', async (req, res) => {
+    try {
+        const blogData = await Blog.findByPk(req.params.blogId, {
+            include: [
+                {
+                    model: User,
+                    attribute: ['name'],
+                },
+                {
+                    model: Comments,
+                    attribute: ['comment', 'date_created', 'user_id']
+                }
+            ]
+        });
+
+        const blog = blogData.get({ plain: true });
+
+        res.json(blog)
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 router.put('/:blogId', async (req, res) => {
     try {
         const blogData = await Blog.update(req.body, {
@@ -33,11 +56,29 @@ router.put('/:blogId', async (req, res) => {
             }
         });
         if (!blogData[0]) {
-            res.status(400).json({ message: 'No user with this id!' });
+            res.status(400).json({ message: 'No blog with this id!' });
             return;
         }
         res.status(200).json(blogData)
     } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.delete('/:blogId', async (req, res) => {
+    try {
+        const blogData = await Blog.destroy({
+            where: {
+                id: req.params.blogId
+            }
+        });
+        if (!blogData) {
+            res.status(400).json({ message: 'No blog with this id!' });
+            return;
+        }
+        res.status(200).json(blogData)
+    } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
 })

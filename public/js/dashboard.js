@@ -3,6 +3,11 @@ const newPostButton = async (event) => {
 
     const form = document.querySelector('.post-form')
     form.style.display = 'block';
+    if (document.querySelector('.blog-list')) {
+        const blogList = document.querySelector('.blog-list') 
+
+        blogList.style.display = 'none';
+    }
 }
 
 const newBlogHandler = async (event) => {
