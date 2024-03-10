@@ -1,16 +1,3 @@
-{{#if blogs.length}}
-    {{#each blog as |blogs|}}
-        <div class="blog-title">
-            <h1>{{title}}</h1>
-            <p>{{format_date date_created}}<p>
-        </div>
-    {{/each}}
-{{/if}}
-
-<div class="dashboard-container">
-    <button class="btn btn-primary create-post" type="submit">+ New Post</button>
-</div>
-
 <div class="post-form"> 
     <h2 class="login-title">Create New Post</h2>
 
@@ -24,7 +11,21 @@
             <textarea class="form-input scrollable-input" type="text" id="blog-content"></textarea>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary submit" type="submit">Create</button>
+            <button class="btn btn-primary submit post-submit" type="submit">Create</button>
         </div>
     </form>
 </div>
+<div class="dashboard-container">
+    <button class="btn btn-primary create-post" type="submit">+ New Post</button>
+</div>
+
+{{#if blogs.length}}
+    {{#each blog as |blogs|}}
+        <div class="blog-title">
+            <h1>{{title}}</h1>
+            <p>{{format_date date_created}}<p>
+        </div>
+    {{/each}}
+{{/if}}
+
+<script src="./js/dashboard.js"></script>

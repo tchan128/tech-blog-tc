@@ -1,3 +1,10 @@
+const newPostButton = async (event) => {
+    event.preventDefault();
+
+    const form = document.querySelector('.post-form')
+    form.style.display = 'block';
+}
+
 const newBlogHandler = async (event) => {
     event.preventDefault();
 
@@ -25,6 +32,10 @@ const newBlogHandler = async (event) => {
 //     if (event.target.hasAttribute('data-id'))
 // }
 
+if (document.querySelector('.post-submit')) {
+    document.querySelector('.post-submit').addEventListener('click', newBlogHandler)
+}
+
 if (document.querySelector('.create-post')) {
-    document.querySelector('.create-post').addEventListener('click', newBlogHandler);
+    document.querySelector('.create-post').addEventListener('click', newPostButton)
 }

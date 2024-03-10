@@ -129,7 +129,7 @@ label {
 .create-post {
     background-color: #24180f;
     width: fit-content;
-    height: 50px;
+    height: 65px;
     font-size: 25px;
     border-radius: 15px;
     padding: 5px 25px;
@@ -137,10 +137,11 @@ label {
 }
 
 .dashboard-container {
-    display: flex;
+    position: fixed;
     justify-content: center;
     align-items: flex-end;
-    height: 70vh; /* Adjust this as needed */
+    bottom: 50px; /* Adjust this as needed */
+    left: 45%
 }
 
 /* Individual blog page */
@@ -174,4 +175,8 @@ label {
     color: #D9EAD3;
     font-size: 25px;
     font-weight: bold;
+}
+
+.post-form {
+    display: none;
 }
