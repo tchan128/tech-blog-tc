@@ -23,7 +23,7 @@
     {{#if blogs.length}}
         {{#each blogs as |blog|}}
             <div class="single-blog">
-                <h1>{{title}}</h1>
+                <a class="blog-post" href="blog/{{blog.id}}">{{blog.title}}</a>
                 <p>{{format_date date_created}}<p>
             </div>
         {{/each}}
