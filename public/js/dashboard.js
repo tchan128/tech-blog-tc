@@ -28,9 +28,37 @@ const newBlogHandler = async (event) => {
     }
 };
 
-// const delButtonHandler = async (event) => {
-//     if (event.target.hasAttribute('data-id'))
-// }
+const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id');
+
+        const response = await fetch(`/api/blogs/${id}`, {
+            method: 'DELETE'
+        });
+
+        if (response.ok) {
+            document.location.replace('/profile');
+          } else {
+            alert('Failed to delete project');
+          }
+    }
+};
+
+// const updateButtonHandler = async (event) => {
+//     if (event.target.hasAttribute('data-id')) {
+//         const id = event.target.getAttribute('data-id');
+
+//         const response = await fetch(`/api/blogs/${id}`, {
+//             method: 'DELETE'
+//         });
+
+//         if (response.ok) {
+//             document.location.replace('/profile');
+//           } else {
+//             alert('Failed to delete project');
+//           }
+//     }
+// };
 
 if (document.querySelector('.post-submit')) {
     document.querySelector('.post-submit').addEventListener('click', newBlogHandler)

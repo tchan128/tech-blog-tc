@@ -180,3 +180,23 @@ label {
 .post-form {
     display: none;
 }
+
+.single-blog {
+    background-color: rgb(91, 86, 86);
+    color: white;
+    padding: 13px 25px;
+    margin: 30px 50px;
+    border-radius: 15px;
+}
+
+.single-blog h1 {
+    font-size: 25px;
+    display: inline;
+}
+
+.single-blog p  {
+    font-size: 18px;
+    text-align: bottom;
+    float: right;
+    margin-top: 3px;
+}
