@@ -30,13 +30,13 @@ Blog.init(
                 key: 'id'
             }
         }, 
-        // comments: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'comments',
-        //         key: 'id'
-        //     }
-        // }
+        comments: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'comments',
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,

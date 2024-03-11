@@ -203,4 +203,5 @@ label {
 .comment-container {
     margin: 20px 40px;
     border: #24180f solid;
+    /* display: none; */
 }

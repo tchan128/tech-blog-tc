@@ -35,6 +35,7 @@ router.get('/blog/:id', async (req, res) => {
                 },
                 {
                     model: Comments,
+                    as: `blog_comments`,
                     attribute: ['comment', 'date_created', 'user_id']
                 }
             ]

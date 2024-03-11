@@ -13,9 +13,14 @@ const addCommentFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            // Show comment list
+           document.querySelector('.comment-container').style.display = 'block';
         } else {
             alert('Failed to create comment')
         }
     }
 };
+
+
+if (document.querySelector('.comment-submit')) {
+    document.querySelector('.comment-submit').addEventListener('submit', addCommentFormHandler)
+}
