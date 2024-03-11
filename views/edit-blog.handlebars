@@ -11,12 +11,12 @@
             <textarea class="form-input scrollable-input" type="text" id="blog-content"></textarea>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary submit post-update" type="submit">Update Post</button>
+            <button class="btn btn-primary submit post-update" data-id="{{blog.id}}" type="submit">Update Post</button>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary submit post-delete" type="submit">Delete</button>
+            <button class="btn btn-primary submit post-delete" data-id="{{blog.id}}" type="submit">Delete</button>
         </div>
     </form>
 </div>
 
-<script src="./js/dashboard.js"></script>
+<script src="/js/dashboard.js"></script>

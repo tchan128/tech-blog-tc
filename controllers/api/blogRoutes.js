@@ -52,6 +52,7 @@ router.get('/:blogId', async (req, res) => {
 })
 
 router.put('/:blogId', async (req, res) => {
+    console.log("reaching")
     try {
         const blogData = await Blog.update(req.body, {
             where: {
@@ -64,6 +65,7 @@ router.put('/:blogId', async (req, res) => {
         }
         res.status(200).json(blogData)
     } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
 })
