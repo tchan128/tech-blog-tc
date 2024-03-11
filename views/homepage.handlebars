@@ -1,7 +1,7 @@
 {{#each blogs as |blog| }}
 <div class="blog-container">
     <div class="blog-title">
-        <a class="blog-post" href="blog/{{blog.id}}">{{blog.title}}</a>
+        <a class="blog-post" href="blog/{{blog.id}}"data-id="{{blog.id}}">{{blog.title}}</a>
         <p>Posted by {{blog.user.name}} on {{format_date blog.date_created}}<p>
     </div>
     <div class="blog-content">

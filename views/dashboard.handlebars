@@ -23,7 +23,7 @@
     {{#if blogs.length}}
         {{#each blogs as |blog|}}
             <div class="single-blog">
-                <a class="blog-post" href="api/blogs/{{blog.id}}">{{blog.title}}</a>
+                <a class="blog-post" href="api/blogs/{{blog.id}}" data-id="{{blog.id}}">{{blog.title}}</a>
                 <p>{{format_date date_created}}<p>
             </div>
         {{/each}}
