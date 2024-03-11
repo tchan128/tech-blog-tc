@@ -4,11 +4,11 @@
     <form class="form login-form">
         <div class="form-group comment">
             <label for="blog-title">Title<label>
-            <input class="form-input" type="text" id="blog-title"></textarea>
+            <input class="form-input" type="text" id="blog-title" value="{{blog.title}}"></input>
         </div>
         <div class="form-group comment">
             <label for="blog-title">Content<label>
-            <textarea class="form-input scrollable-input" type="text" id="blog-content"></textarea>
+            <textarea class="form-input scrollable-input" type="text" id="blog-content">{{blog.content}}</textarea>
         </div>
         <div class="form-group">
             <button class="btn btn-primary submit post-update" data-id="{{blog.id}}" type="submit">Update Post</button>
