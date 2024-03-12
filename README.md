@@ -125,6 +125,7 @@ In addition to that, some websites that helped with the build of this weather da
 - Event Listener MDN: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 - Sequelize Model Querying: https://sequelize.org/docs/v6/core-concepts/model-querying-basics/
 - Sequelize Model Instances: https://sequelize.org/docs/v6/core-concepts/model-instances/
+- Heroku Deployment Guide: https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql
 
 README icon is found here: <a href="https://www.flaticon.com/free-icons/blog" title="blog icons">Blog icons created by Freepik - Flaticon</a>
 
