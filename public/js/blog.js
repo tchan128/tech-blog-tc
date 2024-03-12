@@ -17,8 +17,7 @@ const addCommentFormHandler = async (event) => {
         });
 
         if (response.ok) {
-           document.querySelector('.comment-container').style.display = 'block';
-           document.querySelector('.add-comment-container').style.display = 'none';
+            document.location.replace(`/${id}/comments`);
         } else {
             alert('Failed to create comment')
         }

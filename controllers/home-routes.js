@@ -49,22 +49,61 @@ router.get('/blog/:id', withAuth, async (req, res) => {
         });
 
         const blog = blogData.get({ plain: true });
-        const comments = commentData.map(comment => comment.get({ plain: true }))
+        // const comments = commentData.map(comment => comment.get({ plain: true }))
         // console.log((comments.length))
 
-        const data = {
-            blog: blog,
-            comments: comments,
-            logged_in: req.session.logged_in
-        };
+        // const data = {
+        //     blog: blog,
+        //     comments: comments,
+        //     logged_in: req.session.logged_in
+        // };
 
-        res.render('blog', data)
+        res.render('blog', {
+            ...blog,
+            logged_in: req.session.logged_in
+        });
 
         // res.json(blog)
 
     } catch (err) {
         res.status(500).json(err)
         console.log(err)
+    }
+});
+
+router.get('/:blogId/comments', withAuth, async (req, res) => {
+    try {
+        const blogData = await Blog.findByPk(req.params.blogId, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+            ]
+        });
+
+        const commentData = await Comments.findAll({
+            where: {
+                blog_id: req.params.blogId
+            }, 
+            include: {
+                model: User,
+                attributes: ['name']
+            }
+        });
+    
+        const blog = blogData.get({ plain: true });
+        const comments = commentData.map(comment => comment.get({ plain: true }))
+    
+        fullData = {
+            blog: blog,
+            comments: comments,
+            logged_in: req.session.logged_in
+        }
+
+        res.render('comments', fullData)
+    } catch (err) {
+        res.status(400).json(err)
     }
 })
 
