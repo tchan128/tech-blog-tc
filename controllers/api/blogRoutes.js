@@ -31,13 +31,8 @@ router.get('/:blogId', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attribute: ['name'],
+                    attributes: ['name'],
                 },
-                // {
-                //     model: Comments,
-                //     as: 'blog_comments',
-                //     attributes: ['comment', 'date_created', 'user_id']
-                // }
             ]
         });
 
@@ -47,12 +42,12 @@ router.get('/:blogId', async (req, res) => {
             }, 
             include: {
                 model: User,
-                attribute: ['name']
+                attributes: ['name']
             }
         });
 
         const blog = blogData.get({ plain: true });
-        const comments = blogCommentsData.get({ plain: true });
+        const comments = commentData.map(comment => comment.get({ plain: true }))
 
         res.render('edit-blog', {
             blog,
