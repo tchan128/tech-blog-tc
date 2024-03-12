@@ -33,20 +33,35 @@ router.get('/blog/:id', async (req, res) => {
                     model: User,
                     attribute: ['name'],
                 },
-                {
-                    model: Comments,
-                    as: `blog_comments`,
-                    attribute: ['comment', 'date_created', 'user_id']
-                }
+                // {
+                //     model: Comments,
+                //     as: `blog_comments`,
+                //     attribute: ['comment', 'date_created', 'user_id']
+                // }
             ]
         });
 
-        const blog = blogData.get({ plain: true });
+        const commentData = await Comments.findAll({
+            where: {
+                blog_id: req.params.id
+            }, 
+            include: {
+                model: User,
+                attribute: ['name']
+            }
+        });
 
-        res.render('blog', {
-            ...blog,
+        const blog = blogData.get({ plain: true });
+        const comments = commentData.map(comment => comment.get({ plain: true }))
+        // console.log((comments.length))
+
+        const data = {
+            blog: blog,
+            comments: comments,
             logged_in: req.session.logged_in
-        })
+        };
+
+        res.render('blog', data)
 
         // res.json(blog)
 
