@@ -202,6 +202,14 @@ label {
 
 .comment-container {
     margin: 20px 40px;
+    display: none;
+}
+
+.single-comment {
+    margin: 20px 0px;
     border: #24180f solid;
-    /* display: none; */
+}
+
+.comment-container p {
+    margin: 15px 0px;
 }

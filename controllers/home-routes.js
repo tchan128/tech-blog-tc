@@ -33,13 +33,9 @@ router.get('/blog/:id', async (req, res) => {
                     model: User,
                     attribute: ['name'],
                 },
-                // {
-                //     model: Comments,
-                //     as: `blog_comments`,
-                //     attribute: ['comment', 'date_created', 'user_id']
-                // }
             ]
         });
+        console.log(blogData)
 
         const commentData = await Comments.findAll({
             where: {

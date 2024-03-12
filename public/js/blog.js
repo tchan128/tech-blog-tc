@@ -3,8 +3,12 @@ const addCommentFormHandler = async (event) => {
 
     const comment = document.querySelector('#comment').value.trim();
 
+    const id = event.target.getAttribute('data-id');
+    console.log(id)
+
+
     if (comment) {
-        const response = await fetch('/api/blogs/:blogId', {
+        const response = await fetch(`/api/blogs/${id}`, {
             method: 'POST',
             body: JSON.stringify({ comment }),
             headers: {
@@ -14,6 +18,7 @@ const addCommentFormHandler = async (event) => {
 
         if (response.ok) {
            document.querySelector('.comment-container').style.display = 'block';
+           document.querySelector('.add-comment-container').style.display = 'none';
         } else {
             alert('Failed to create comment')
         }
@@ -22,5 +27,5 @@ const addCommentFormHandler = async (event) => {
 
 
 if (document.querySelector('.comment-submit')) {
-    document.querySelector('.comment-submit').addEventListener('submit', addCommentFormHandler)
+    document.querySelector('.comment-submit').addEventListener('click', addCommentFormHandler)
 }

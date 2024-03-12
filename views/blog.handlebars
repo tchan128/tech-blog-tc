@@ -16,7 +16,7 @@
             <textarea class="form-input scrollable-input" type="text" id="comment"></textarea>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary submit comment-submit" type="submit">Submit</button>
+            <button class="btn btn-primary submit comment-submit" type="submit" data-id="{{blog.id}}">Submit</button>
         </div>
     </form>
 </div>
@@ -24,11 +24,15 @@
 {{#if comments.length}}
     <div class="comment-container">
         {{#each comments as |comment|}}
-            <div class="comment-header"></div>
-            <div class="blog-content">
-                <p>{{comment.comment}}</p>
-                <p>- {{comment.user.name}}, {{format_date comment.date_created}}</p>
+            <div class="single-comment">
+                <div class="comment-header"></div>
+                <div class="blog-content">
+                    <p>{{comment.comment}}</p>
+                    <p>- {{comment.user.name}}, {{format_date comment.date_created}}</p>
+                </div>
             </div>
         {{/each}}
     </div>
 {{/if}}
+
+<script src="/js/blog.js"></script>
