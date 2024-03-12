@@ -95,11 +95,26 @@ In this project, a fullstack tech blog is built for users to share insights/ques
 
 ## Visuals
 
-1. Section displaying current weather:
+1. Home page
+<img width="1462" alt="Screenshot 2024-03-12 at 7 28 09 PM" src="https://github.com/tchan128/tech-blog-tc/assets/56553374/edaace90-164d-4ac4-b319-b243f86e35be">
 
+2. Your Dashboard
+<img width="1462" alt="Screenshot 2024-03-12 at 7 33 21 PM" src="https://github.com/tchan128/tech-blog-tc/assets/56553374/e8c364e3-7755-40a5-9bc9-e7e25930b127">
 
-2. Section display future weather:
+3. Update/Delete Post
+<img width="1460" alt="Screenshot 2024-03-12 at 7 36 30 PM" src="https://github.com/tchan128/tech-blog-tc/assets/56553374/13ca911b-0ec3-42b2-8a36-f6f9f7533734">
 
+4. New Post
+<img width="1460" alt="Screenshot 2024-03-12 at 7 36 49 PM" src="https://github.com/tchan128/tech-blog-tc/assets/56553374/09b6ca0f-e97e-4027-84da-d41d0a37cbe4">
+
+5. Leave a Comment
+<img width="1461" alt="Screenshot 2024-03-12 at 7 37 05 PM" src="https://github.com/tchan128/tech-blog-tc/assets/56553374/18af5194-9497-4e2e-93c4-a7350df96b0e">
+
+6. Comments
+<img width="1464" alt="Screenshot 2024-03-12 at 7 38 12 PM" src="https://github.com/tchan128/tech-blog-tc/assets/56553374/41eba24e-b217-45d9-9289-d8128c9ef162">
+
+7. Login page
+<img width="1463" alt="Screenshot 2024-03-12 at 7 37 32 PM" src="https://github.com/tchan128/tech-blog-tc/assets/56553374/19cff251-73f1-420f-a3fa-3d8f5c4aa18c">
 
 ## Credits
 
