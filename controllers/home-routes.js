@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Blog, Comments } = require('../models'); 
+const withAuth = require('../utils/auth');
 
 // GET all events for homepage
 router.get('/', async (req, res) => {
@@ -25,7 +26,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/blog/:id', async (req, res) => {
+router.get('/blog/:id', withAuth, async (req, res) => {
     try {
         const blogData = await Blog.findByPk(req.params.id, {
             include: [
@@ -67,9 +68,9 @@ router.get('/blog/:id', async (req, res) => {
     }
 })
 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
     try { 
-        if (req.session.logged_in) {
+        // if (req.session.logged_in) {
 
             const userData = await User.findByPk(req.session.user_id, {
                 attributes: { exclude: ['password'] },
@@ -83,9 +84,9 @@ router.get('/dashboard', async (req, res) => {
                 logged_in: req.session.logged_in,
             });
             return;
-        } else {
-            res.redirect('login');
-        }
+        // } else {
+        //     res.redirect('login');
+        // }
     } catch (err) {
         res.status(400).json(err)
     }

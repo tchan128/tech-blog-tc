@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Blog, User, Comments } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newBlog = await Blog.create({
             ...req.body,
@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:blogId', async (req, res) => {
+router.get('/:blogId', withAuth, async (req, res) => {
     try {
         const blogData = await Blog.findByPk(req.params.blogId, {
             include: [
@@ -36,7 +36,7 @@ router.get('/:blogId', async (req, res) => {
             ]
         });
 
-        const blogCommentsData = await Comments.findAll({
+        const commentData = await Comments.findAll({
             where: {
                 blog_id: req.params.blogId
             }, 
@@ -59,7 +59,7 @@ router.get('/:blogId', async (req, res) => {
     }
 })
 
-router.put('/:blogId', async (req, res) => {
+router.put('/:blogId', withAuth, async (req, res) => {
     console.log("reaching")
     try {
         const blogData = await Blog.update(req.body, {
@@ -78,7 +78,7 @@ router.put('/:blogId', async (req, res) => {
     }
 })
 
-router.delete('/:blogId', async (req, res) => {
+router.delete('/:blogId', withAuth, async (req, res) => {
     try {
         const blogData = await Blog.destroy({
             where: {
@@ -96,7 +96,7 @@ router.delete('/:blogId', async (req, res) => {
     }
 })
 
-router.post('/:blogId', async (req, res) => {
+router.post('/:blogId', withAuth, async (req, res) => {
     try {
         const newComment = await Comments.create({
             ...req.body,
