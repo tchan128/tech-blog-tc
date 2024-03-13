@@ -143,7 +143,7 @@ Please refer to the LICENSE in the repo.
 
 Tiffany Chan - tchan12899@gmail.com
 
-Project Link: https://github.com/tchan128/tech-blog-tc
-Deployed Heroku App: https://tech-blog-tc-fd5328f1268d.herokuapp.com/
+- Project Link: https://github.com/tchan128/tech-blog-tc
+- Deployed Heroku App: https://tech-blog-tc-fd5328f1268d.herokuapp.com/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
