@@ -31,7 +31,7 @@ This project is a full stack tech blog. This project is build with Express JS, n
 
 ## Installation
 
-Nothing is needed to be installed if the app is accessed through Heroku here:
+Nothing is needed to be installed if the app is accessed through Heroku here: https://tech-blog-tc-fd5328f1268d.herokuapp.com/
 
 If it is cloned, there are a couple of things that needs to be done to set it up. 
 
@@ -144,6 +144,6 @@ Please refer to the LICENSE in the repo.
 Tiffany Chan - tchan12899@gmail.com
 
 Project Link: https://github.com/tchan128/tech-blog-tc
-Deployed Heroku App: 
+Deployed Heroku App: https://tech-blog-tc-fd5328f1268d.herokuapp.com/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
